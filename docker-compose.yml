@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  listener:
+    build:
+      context: ./
+    command: ros2 run test_talker_listener test_node_listener
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  talker:
+    build:
+      context: ./
+    command: ros2 run test_talker_listener test_node_talker
+    environment:
+      - PYTHONUNBUFFERED=1
+
